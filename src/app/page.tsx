@@ -320,14 +320,9 @@ export default function BGRemover() {
 
       <main className="flex mt-20   gap-x-10  w-full justify-evenly items-center  ">
         {!preview ? (
-          <div className=" flex flex-col items-center justify-center ">
-            <div className="absolute inset-0 -z-10">
-              <div className="absolute top-10 left-10 h-72 w-72 bg-primary/20 rounded-full blur-3xl opacity-50 animate-pulse"></div>
-              <div className="absolute bottom-10 right-10 h-80 w-80 bg-pink-400/30 rounded-full blur-3xl opacity-50 animate-pulse"></div>
-            </div>
-
-            <div className="relative w-screen  mt-32 -ml-20  backdrop-blur-md rounded-2xl  text-center ">
-              <h1 className="text-5xl font-extrabold text-gray-900">
+          <div className=" flex flex-col items-center justify-between p-4 sm:p-8">
+            <div className="w-full max-w-4xl   backdrop-blur-md rounded-2xl text-center p-6 ">
+              <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900">
                 <span className="bg-gradient-to-r from-pink-500 to-red-500 bg-clip-text text-transparent">
                   Remove Image Background
                 </span>
@@ -351,21 +346,22 @@ export default function BGRemover() {
                 </label>
               </div>
             </div>
-            <p className=" absolute top-60 h-40 rotate-45 left-52 shadow-[0px_0px_100px_100px_pink]"></p>
-            <p className=" absolute bottom-60 h-40 rotate-45 right-52 shadow-[0px_0px_100px_100px_pink]"></p>
-            <img
-              className="absolute  left-10 bottom-10 h-64 w-96 object-cover rounded-2xl shadow-lg"
-              src="/hero/1.png"
-              alt="Before & After 1"
-            />
-            <img
-              className="absolute  right-10 top-20 h-56 w-96 object-cover rounded-lg shadow-lg"
-              src="/hero/2.png"
-              alt="Before & After 2"
-            />
+
+            <div className="flex flex-col  sm:flex-row items-center justify-center  space-y-8 sm:space-y-0 sm:space-x-8 my-4">
+              <img
+                className="h-64 w-96  border  object-cover rounded-2xl shadow-lg"
+                src="/hero/1.png"
+                alt="Before & After 1"
+              />
+              <img
+                className="h-64 w-96 object-cover rounded-2xl  shadow-lg"
+                src="/hero/2.png"
+                alt="Before & After 2"
+              />
+            </div>
           </div>
         ) : (
-          <div className="w-full max-w-6xl flex flex-col md:flex-row gap-8">
+          <div className="w-full max-w-6xl px-10 sm:px-2 flex flex-col md:flex-row gap-8">
             <div className="flex-1 bg-white rounded-lg shadow-md overflow-hidden">
               <div className="relative ">
                 {loading && (
@@ -415,9 +411,9 @@ export default function BGRemover() {
             </div>
 
             <div className="flex-1 space-y-6">
-              <div className="space-y-4">
+              <div className="space-y-4 mb-4">
                 <h2
-                  className={`text-2xl  font-semibold ${
+                  className={`sm:text-2xl  font-semibold ${
                     !result && " h-7 rounded-md animate-pulse bg-gray-200"
                   }`}
                 >
@@ -483,7 +479,7 @@ export default function BGRemover() {
 
                         <div
                           className={`    overflow-hidden duration-500   ${
-                            showBgDialog ? "h-80 " : "h-0 "
+                            showBgDialog ? "sm:h-80 h-46 " : "h-0 "
                           }`}
                         >
                           <Tabs defaultValue="photo">
@@ -528,7 +524,7 @@ export default function BGRemover() {
                                     setBgColor(color);
                                     setBgImage(null);
                                   }}
-                                  className="aspect-square text-xs rounded-lg border-2 hover:border-primary"
+                                  className="aspect-square sm:text-xs text-[6px] rounded-lg border-2 hover:border-primary"
                                   style={{
                                     background:
                                       color === "transparent"

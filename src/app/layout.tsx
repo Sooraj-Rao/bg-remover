@@ -112,7 +112,22 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${GeistSans.className}`}>{children}</body>
+      <body className={`${GeistSans.className}`}>
+        <>
+          {children}
+          <footer className="w-full text-sm md:hidden text-center py-4 bg-gray-100 bg-opacity-80 backdrop-blur-sm">
+            <p>
+              Developed by{" "}
+              <a
+                href="https://soorajrao.in?ref=remove-bg"
+                className="text-pink-600 hover:underline"
+              >
+                Sooraj
+              </a>
+            </p>
+          </footer>
+        </>
+      </body>
     </html>
   );
 }
